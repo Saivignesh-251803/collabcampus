@@ -12,7 +12,8 @@ public class Message {
     @ManyToOne @JoinColumn(name="receiver_id") private User receiver;
     @ManyToOne @JoinColumn(name="course_id") private Course course;
     @Column(columnDefinition="TEXT") private String content;
-    private boolean read = false;
+    @Column(name = "is_read")
+    private boolean read;
     private String chatType = "DIRECT";
     @CreationTimestamp private LocalDateTime sentAt;
 }
